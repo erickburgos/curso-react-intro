@@ -16,11 +16,8 @@ const defaultTodos = [
   {text: 'Cortar cebolla', completed: true},
   {text: 'Hacer curso react', completed: false},
   {text: 'Hacer otras cosas', completed: true},
-  {text: 'Seguimos renderizando', completed:false},
-  {text: 'Seguimos renderizando', completed:false},
-  {text: 'Seguimos renderizando', completed:false},
-  {text: 'Seguimos renderizando', completed:false},
-  {text: 'Seguimos renderizando', completed:false},
+  {text: 'Seguimos renderizando', completed:true,},
+  
 
 ]
 
