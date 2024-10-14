@@ -1,0 +1,151 @@
+1. Conocimientos de javascript
+2. Manejar git y github
+3. Saber NPM instalar dependencias
+
+To do Machine es el proyecto del curso
+
+Pasos para clonar
+1. seleccionar donde dice code y copiar la direccion url del proyecto
+2. abrir la consola escribir "git clone url" en este caso
+    git clone https://github.com/platzi/curso-react-intro.git
+
+3. en consola entar a la carpeta descargada cd "Nombre carpeta"
+4. npm i (Esto es igual a npm install para instalar todas las dependencias)
+
+
+4.5 Al hacer este procedimiento nos va a crear las carpetas necesarias en la ruta que le instalamos.
+
+5. si colocamos npm start nos va a iniciar un servidor local de nuestra aplicacion en su primera version
+
+
+
+
+---------------------------------
+ERROR DE version
+
+Aquí una aclaración, en mi caso uso node 18 y me presento el siguiente error:
+
+opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+
+Para solucionar esto elimine la carpeta node_modules y package-lock.json aunque no solucionó el error pude encontrar unos cambios en los scripts de packge.json:
+
+"start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+
+Con esto ya se soluciono el primer problema que tuvé. Continuando con la ejecución de la aplicación tuve el siguiente mensaje:
+
+Line X: 'React' must be in scope when using JSX
+
+Este mensaje nos dice que no React debe estar dentro del scope cuando usamos JSX, (aún no entiendo porque pasa esto si las extensiones estan con .js), pero bueno al final solucioné esta alerta importando React en App.js:
+
+import React from 'react';
+
+Luego de esto todo bien.
+Espero le sirva a alguien
+
+
+
+---------------------------------------------
+
+
+
+
+    npm run Ejecuta nuestro proyecto en modo desarrollo
+
+    npm build Genera versión del proyecto para desplegar a producción.
+
+    ¿Dónde se renderiza (dibuja) nuestra aplicación? En el div con id="root" del index.html
+
+    ¿De dónde viene lo que se renderiza? Del componente "App" que definimos en index.js
+
+    ¿ Qué son los componentes ? piezas de código (generalmente en forma de funciones con nombre en mayúscula).
+
+    ¿Qué retorna la función ? los elementos del componente (elementos de React), en un formato llamado JSX, el cual se parece a HTML.
+
+    ¿ Qué utilidad tiene JSX ? combinar código HTML con JS para, por ejemplo, usar variables para dar valores a los atributos de los elementos
+
+    ¿ Principal diferencia entre elementos y componentes ? Los elementos empiezan con minúsculas y los componentes con mayúsculas.
+
+    ¿ Para qué sirven ? Para reutilizarlos y así no repetir código
+
+    ¿ Cómo llamo a un componente? Escribiendo su nombre con la siguiente sintáxis < Componente1 />
+
+    ¿ Cómo agrego dinamismo a los componentes para que cambien su contenido ? Recibiendo props por parámetros de la función
+
+    Nota: Los componentes se pueden anidar, es decir, meter uno dentro de otro
+
+
+
+
+
+
+
+
+
+
+    npm run Ejecuta nuestro proyecto en modo desarrollo
+
+    npm build Genera versión del proyecto para desplegar a producción.
+
+    ¿Dónde se renderiza (dibuja) nuestra aplicación? En el div con id="root" del index.html
+
+    ¿De dónde viene lo que se renderiza? Del componente "App" que definimos en index.js
+
+    ¿ Qué son los componentes ? piezas de código (generalmente en forma de funciones con nombre en mayúscula).
+
+    ¿Qué retorna la función ? los elementos del componente (elementos de React), en un formato llamado JSX, el cual se parece a HTML.
+
+    ¿ Qué utilidad tiene JSX ? combinar código HTML con JS para, por ejemplo, usar variables para dar valores a los atributos de los elementos
+
+    ¿ Principal diferencia entre elementos y componentes ? Los elementos empiezan con minúsculas y los componentes con mayúsculas.
+
+    ¿ Para qué sirven ? Para reutilizarlos y así no repetir código
+
+    ¿ Cómo llamo a un componente? Escribiendo su nombre con la siguiente sintáxis < Componente1 />
+
+    ¿ Cómo agrego dinamismo a los componentes para que cambien su contenido ? Recibiendo props por parámetros de la función
+
+    Nota: Los componentes se pueden anidar, es decir, meter uno dentro de otro
+
+
+
+En el caso de React utiliza JSX que es mucho mas comodo a la hora de trabajar y de leer un ejemplo
+
+function TodoCount(props) {
+    return (
+        <h1>
+        Completaste
+        {props.completed} de 
+        {props.total} TODOs</h1>
+    )
+}
+
+
+en cambio en Javascript se ve de esta manera
+
+function TodoCount(props) {
+    return (
+        React.createElement (
+            'h1',
+            null,
+            `Completaste
+            ${props.completed} de
+            ${props.total} ToDos`
+        )
+    )
+}
+
+-------------------------------------------
+
+Estilos en React
+
+hay 2 formas de agregar estilos con style en linea y tambien agregar estilos en cascada
+
+seleccionamos un componente y dentro de alguna etiqueta agregamos la palabra style={} y las dobles llaves ademas de que agregando toca usar camel carpetas
+
+ejemplo
+<h1 style={
+    BacgrkoundColor: 'Blue'
+}

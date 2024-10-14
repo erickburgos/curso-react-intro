@@ -1,38 +1,353 @@
-.App {
+
+
+.main-container {
+  display: grid;
+  grid-template-columns: 450px 450px;
+  gap: 16px;
+  max-width: 900px;
+  margin: auto;
+  padding: 0;
+  height: auto;
+  
+  
+ 
+}
+
+.todo-container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 96px;
+  margin-left: 96px;
+  padding: 10px;
+  max-width: 100%;
+  width: 350px;
+  height: 600px;
+  background-color: white;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);;
+  
+}
+
+h1, h4, input{
+  
+  margin-left: 16px;
+}
+
+.h1-task-container {
+  color: #3e3eda;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+h4 {
+  color: #32303d;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+
+
+.todoInput {
+  max-width: 100%;
+  width: 300px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border: none;
+  background-color: #e6ebef;
+  height: 40px;
+  padding-left: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+ 
+}
+
+
+
+button {
+  background-color: #1bced2;
+  width: 120px;
+  height: 40px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+
+
+
+.todo-container > * {
+  margin-bottom: 10px;
+}
+
+.list-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  
+  margin: auto 0;
+  margin-top: 96px;
+  padding-top: 12px;
+  width: 370px;
+  height: 620px;
+  border-radius: 0 16px 16px 0;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 0 16px 16px 0;
+  -moz-border-radius: 0 16px 16px 0;
+  -ms-border-radius: 0 16px 16px 0;
+  -o-border-radius: 0 16px 16px 0;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400PX;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.h1-list-container {
+  color: #1bced2;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  margin-top: 24px;
+  text-align: center;
+ 
+  width: 320px ;
+  
+}
+
+.input-search{
+  max-width: 100%;
+  height: 42px;
+  width: 320px;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  border: none;
+  background-color: #e6ebef;
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+
+
+
+.todo-list-ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
+  margin: auto 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  
+  width: 100%;
+  height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  list-style-type: none;
+  text-align: center;
+  box-sizing: border-box;
+  
+}
+
+.todo-item-li{
+  margin-left: 0;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px;
+  place-content: center;
+  width: 100%;
+  height: 60px;
+  font-size: 1rem;
+  background-color: #e2e2e2;
+  margin-top: 8px;
+  font-size: 12px;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  
+  
+}
+
+.todo-item-li--complete {
+  background-color: #e2e2e2;
+}
+
+
+
+.todo-item-li:hover {
+  background-color: #f5c41b;
+}
+
+
+
+span {
+  place-content: center;
+ 
+}
+
+.h4-title {
+  font-size: 1rem;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 80px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.Icon-check{
+  
+  padding-left: 8px;
+  transition: transform 0.4 ease;
+  -webkit-transition: transform 0.4 ease;
+  -moz-transition: transform 0.4 ease;
+  -ms-transition: transform 0.4 ease;
+  -o-transition: transform 0.4 ease;
+  content-visibility: hidden;
+
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.Icon-check--active{
+  padding-left: 8px;
+  transition: transform 0.4 ease;
+  content-visibility: visible ;
+}
+
+.Icon-check:hover {
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+
+
+
+
+
+.Icon-delete{
+  padding-right: 8px;
+  transition: transform 0.4 ease;
+  -webkit-transition: transform 0.4 ease;
+  -moz-transition: transform 0.4 ease;
+  -ms-transition: transform 0.4 ease;
+  -o-transition: transform 0.4 ease;
+}
+
+.Icon-delete:hover{
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+}
+
+
+.TodoItem-p{
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+.TodoItem-p--complete{
+  text-decoration: line-through;
+}
+
+
+/* -------------------- RESPONSIVE MEDIA QUERIESS --------------  */
+@media  (max-width:950px) {
+
+  body {
+    height: 1600px;
   }
-}
 
-.App-header {
-  background-color: #233553;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #97ca3f;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .main-container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    
   }
-  to {
-    transform: rotate(360deg);
+
+ 
+  .todo-container{
+    margin-bottom: 0;
   }
+
+  .list-container {
+    width: 370px;
+    height: 700px;
+    margin-left: 96px;
+    margin-top: 0;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+    overflow-y:scroll;
+    scrollbar-width: none;
+}
+
+.input-search {
+  margin-bottom: 0;
+}
+
+.todo-list-ul {
+  height: 440px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+
+
+.h4-title {
+  padding-right: 50px;
+  color: #32303d;
+}
+
+.h4-span{
+  color: #3e3eda;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.counter{
+  font-size: 2rem;
+  color: #3e3eda;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+
 }
