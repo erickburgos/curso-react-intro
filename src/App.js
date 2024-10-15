@@ -9,7 +9,9 @@ import './App.css';
 
 
 
-
+//git add . agrega de manera local el archivo
+//git commmit -m "mensaje",  agrega un comentario sobre los cambios que realizamos
+//git push -u origin main  nos sube el archivo a nuestro 
 
 
 const defaultTodos = [
@@ -17,6 +19,9 @@ const defaultTodos = [
   {text: 'Hacer curso react', completed: false},
   {text: 'Hacer otras cosas', completed: true},
   {text: 'Seguimos renderizando', completed:true,},
+  {text: 'Hola', completed:true,},
+  {text: 'ASASD', completed:false,},
+  {text: 'asasdasd', completed:false,},
   
 
 ]
