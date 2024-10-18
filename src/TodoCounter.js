@@ -7,7 +7,7 @@ function TodoCounter  ({  total, completed }) {
 
       //Para agregar estilo podemos agregar dobles llaves
       <h1 className="h1-list-container"style={{fontSize: 24,}}>
-      You commpleted <span class="counter">{completed}</span> of <span class="counter">{total}</span>  your Launchs
+      You're completed <span class="counter">{completed}</span> of <span class="counter">{total}</span>  your Launchs
       </h1>
       
     )

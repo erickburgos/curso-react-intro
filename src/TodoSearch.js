@@ -1,15 +1,20 @@
 import React from 'react'
 import './App.css';
 
-function TodoSearch () {
+function TodoSearch ({
+    searchValue,
+    setSearchValue,
+}) {
+   
+
     return (
         <input 
         className="input-search"
-        placeholder="Cortar cebolla" 
+        placeholder="Ingresa tu busqueda" 
+        value={searchValue}
         onChange={(event) => {
-            console.log('Escribiste en todo search')
-            console.log(event.target)
-            console.log(event.target.value)
+            setSearchValue(event.target.value)
+            
          }
         }
         />

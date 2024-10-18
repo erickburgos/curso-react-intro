@@ -199,15 +199,17 @@ img {
   
 }
 
-.todo-item-li--complete {
-  background-color: #e2e2e2;
-}
+/* .todo-item-li--complete:hover {
+  background-color: #3e3eda;
+  color: #e2e2e2;
+  
+} */
 
 
 
 .todo-item-li:hover {
   background-color: #f5c41b;
-}
+} 
 
 
 

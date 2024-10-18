@@ -14,6 +14,8 @@ import './App.css';
 //git push -u origin main  nos sube el archivo a nuestro 
 
 
+//para cambiar los datos usaremos estados en React
+
 const defaultTodos = [
   {text: 'Cortar cebolla', completed: true},
   {text: 'Hacer curso react', completed: false},
@@ -21,13 +23,33 @@ const defaultTodos = [
   {text: 'Seguimos renderizando', completed:true,},
   {text: 'Hola', completed:true,},
   {text: 'ASASD', completed:false,},
-  {text: 'asasdasd', completed:false,},
+  {text: 'asasdasd', completed:true,},
+  {text: 'Hola Noah como estas', completed:true,},
   
 
 ]
 
 //Las funciones que comienzan con mayuscula, en react suelen ser considerados como componentes
 function App() {
+
+
+  const [todos, setTodos] = React.useState (defaultTodos)
+
+ //Para usar react uyser state necesitamos dejar un array vacio, el estado de react es inmutable
+    // ejmplo const [state, setState] = React.useState(), siempre lleva state y el segundo setState en camelCase
+    //si el state tuviera otro nombre el setstate tambien cambiaria ejemplo [cosita, setCosita]
+
+    //Este filtra la busqueda del input de search
+    const [searchValue, setSearchValue] = React.useState('')
+
+
+    const completedTodos = todos.filter(todo => !!todo.completed).length
+    const totalTodos = todos.length
+
+    console.log('Los usuarios buscan todos de ' + searchValue)
+
+
+
   return (
     //Esto no es un archivo html, si nos fijamos tiene terminacion en js, por lo que se conoce como jsx que es una mezcla entre xml y js.
 
@@ -53,8 +75,14 @@ function App() {
 
     <div className="list-container">
      
-    <TodoCounter completed ={16} total={25} />
-    <TodoSearch />
+    <TodoCounter 
+    completed ={completedTodos} 
+    total={totalTodos} 
+    />
+    <TodoSearch  
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+    />
       <TodoList>
         {defaultTodos.map(todo => (
           <TodoItem 
