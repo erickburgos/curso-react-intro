@@ -157,9 +157,16 @@ img {
 
 
 .todo-list-ul {
+  
+  /*
+  /Cambie esto para mejor visualizacion quite grid y coloque flex
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: start;
+  justify-items: start; */
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin: auto 0;
   padding-left: 16px;
   padding-right: 16px;
