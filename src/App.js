@@ -16,24 +16,43 @@ import './App.css';
 
 //para cambiar los datos usaremos estados en React
 
-const defaultTodos = [
-  {text: 'Cortar cebolla', completed: true},
-  {text: 'Hacer curso react', completed: false},
-  {text: 'Hacer otras cosas', completed: true},
-  {text: 'Seguimos renderizando', completed:true,},
-  {text: 'Hola', completed:true,},
-  {text: 'ASASD', completed:false,},
-  {text: 'asasdasd', completed:true,},
-  {text: 'Hola Noah como estas', completed:true,},
-  
+// const defaultTodos = [
+//   {text: 'Cortar cebolla', completed: true},
+//   {text: 'Hacer curso react', completed: false},
+//   {text: 'Hacer otras cosas', completed: true},
+//   {text: 'Seguimos renderizando', completed:true,},
+//   {text: 'Hola', completed:true,},
+//   {text: 'ASASD', completed:false,},
+//   {text: 'asasdasd', completed:true,},
+//   {text: 'Hola Noah como estas', completed:true,},
+// ]
 
-]
+// localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))
+// localStorage.removeItem('TODOS_v1')
 
 //Las funciones que comienzan con mayuscula, en react suelen ser considerados como componentes
 function App() {
 
 
-  const [todos, setTodos] = React.useState (defaultTodos)
+  //Local storage no puede guardar objetos complejos solo puede guardar strings, el cual se ejecuta con JSON.stringify(Variable contenedora)
+  //Y JSON.parse convierte de nuevo ese string en algo que pueda utilizar javascript
+
+
+  const localStorageTodos = localStorage.getItem('TODOS_V1')
+
+
+  let parsedTodos;
+
+  if(!localStorageTodos ) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]))
+    parsedTodos = []
+  }else {
+    parsedTodos = JSON.parse(localStorageTodos)
+  }
+
+
+
+  const [todos, setTodos] = React.useState (parsedTodos)
 
  //Para usar react uyser state necesitamos dejar un array vacio, el estado de react es inmutable
     // ejmplo const [state, setState] = React.useState(), siempre lleva state y el segundo setState en camelCase
@@ -63,6 +82,16 @@ function App() {
       }
     )
 
+    
+//29 del 10
+
+//Vamos a guardar la informacion que se carga que borra o completan
+
+const saveTodos = (newTodos) => {
+  localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
+  setTodos(newTodos)
+}
+
 
 //23 del 10
 
@@ -72,7 +101,7 @@ function App() {
         (todo) => todo.text ==text
       )
       newTodos[todoIndex].completed = true
-      setTodos(newTodos)
+      saveTodos(newTodos)
     }
 
 
@@ -82,7 +111,7 @@ function App() {
         (todo) => todo.text === text
       )
       newTodos.splice(todoIndex, 1)
-      setTodos(newTodos)
+      saveTodos(newTodos)
     }
 
 

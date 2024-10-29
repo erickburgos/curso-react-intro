@@ -13,7 +13,7 @@ function TodoCounter  ({  total, completed, allCompleted }) {
           <span style={{fontSize: 40, color: '#3e3eda'}}>completed</span> 🚀
           </>
         ) : (
-      <> You're completed <span class="counter">{completed}</span> of <span class="counter">{total}</span>  your Launchs
+      <> You're completed <span class="counter">{completed}</span> of <span class="counter">{total}</span>  Launchs
       </>
     )}
       </h1>
