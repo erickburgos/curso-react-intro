@@ -206,17 +206,24 @@ img {
   
 }
 
-/* .todo-item-li--complete:hover {
+.todo-item-li--complete {
   background-color: #3e3eda;
   color: #e2e2e2;
-  
-} */
+   
+} 
+
+
 
 
 
 .todo-item-li:hover {
   background-color: #f5c41b;
 } 
+
+.todo-item-li--complete:hover{
+  background-color: #1bced2;
+  color: #32303d;
+}
 
 
 
@@ -255,37 +262,37 @@ span {
   -moz-transition: transform 0.4 ease;
   -ms-transition: transform 0.4 ease;
   -o-transition: transform 0.4 ease;
-  content-visibility: hidden;
-
+  content-visibility: visible;
+  scale: 2;
+  padding-top: 2px;
   
+}
+
+.Icon-check:hover{
+  transform: scale(1.5);
+  cursor: pointer;
 }
 
 .Icon-check--active{
   padding-left: 8px;
-  transition: transform 0.4 ease;
-  content-visibility: visible ;
-}
-
-.Icon-check:hover {
-  transform: scale(1.5);
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
+  content-visibility: hidden;
+  
 }
 
 
 
-
-
-
-.Icon-delete{
+.Icon-delete {
   padding-right: 8px;
   transition: transform 0.4 ease;
   -webkit-transition: transform 0.4 ease;
   -moz-transition: transform 0.4 ease;
   -ms-transition: transform 0.4 ease;
   -o-transition: transform 0.4 ease;
+  scale: 2;
+  padding-top: 2px;
+ 
+  
+  
 }
 
 .Icon-delete:hover{
@@ -294,6 +301,7 @@ span {
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
+  cursor: pointer;
 }
 
 
