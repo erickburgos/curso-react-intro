@@ -1,9 +1,9 @@
 import React from 'react';
-import { TodoCounter } from './TodoCounter';
-import { TodoItem } from './TodoItem';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCounter } from '../TodoCounter/index';
+import { TodoItem } from '../TodoItem/index';
+import { TodoSearch } from '../TodoSearch/index';
+import { TodoList } from '../TodoList/index';
+import { CreateTodoButton } from '../CreateTodoButton/index';
 import './App.css';
 
 
@@ -30,29 +30,42 @@ import './App.css';
 // localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos))
 // localStorage.removeItem('TODOS_v1')
 
+//React aconseja usar siempre use para una funcion que sea un custom hook
+
+function useLocalStorage(itemName, initialValue) {
+
+ 
+
+  const localStorageItem = localStorage.getItem(itemName)
+
+
+  let parsedItem;
+
+  if(!localStorageItem ) {
+    localStorage.setItem(itemName, JSON.stringify(initialValue))
+    parsedItem = initialValue
+  }else {
+    parsedItem = JSON.parse(localStorageItem)
+  }
+
+  const [item, setItem] = React.useState(parsedItem)
+
+  //29 del 10
+
+  //Vamos a guardar la informacion que se carga que borra o completan
+
+  const saveItem = (newItem) => {
+    localStorage.setItem(itemName, JSON.stringify(newItem))
+    setItem(newItem)
+  }
+
+  return [item, saveItem]
+}
+
 //Las funciones que comienzan con mayuscula, en react suelen ser considerados como componentes
 function App() {
 
-
-  //Local storage no puede guardar objetos complejos solo puede guardar strings, el cual se ejecuta con JSON.stringify(Variable contenedora)
-  //Y JSON.parse convierte de nuevo ese string en algo que pueda utilizar javascript
-
-
-  const localStorageTodos = localStorage.getItem('TODOS_V1')
-
-
-  let parsedTodos;
-
-  if(!localStorageTodos ) {
-    localStorage.setItem('TODOS_V1', JSON.stringify([]))
-    parsedTodos = []
-  }else {
-    parsedTodos = JSON.parse(localStorageTodos)
-  }
-
-
-
-  const [todos, setTodos] = React.useState (parsedTodos)
+  const [todos, saveTodos] = useLocalStorage('TODOS_V1', [])
 
  //Para usar react uyser state necesitamos dejar un array vacio, el estado de react es inmutable
     // ejmplo const [state, setState] = React.useState(), siempre lleva state y el segundo setState en camelCase
@@ -82,15 +95,8 @@ function App() {
       }
     )
 
-    
-//29 del 10
+      
 
-//Vamos a guardar la informacion que se carga que borra o completan
-
-const saveTodos = (newTodos) => {
-  localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
-  setTodos(newTodos)
-}
 
 
 //23 del 10
@@ -134,7 +140,7 @@ const saveTodos = (newTodos) => {
             
       <CreateTodoButton />
       <div className="img-container">
-      <img src={`${process.env.PUBLIC_URL}/task.png`} alt="Descripción de la imagen" />
+      <img src={`img/task.png`} alt="Descripción de la imagen" />
       </div>
     </div>  
 
