@@ -1,0 +1,39 @@
+.loading-bars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Espacio entre cada barra */
+    height: 300px; /* Altura total del contenedor */
+    width: 100%;
+    padding-bottom: 150px;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .bar {
+    width: 10px; /* Ancho de cada barra */
+    height: 20px; /* Altura inicial de cada barra */
+    background: linear-gradient(180deg, #3e3eda, #1bced2); /* Degradado de color */
+    border-radius: 5px;
+    animation: rocket 0.5s infinite alternate ease-in-out;
+  }
+  
+  /* Aplicamos retrasos para las animaciones */
+  .bar:nth-child(1) { animation-delay: 0s; }
+  .bar:nth-child(2) { animation-delay: 0.1s; }
+  .bar:nth-child(3) { animation-delay: 0.2s; }
+  .bar:nth-child(4) { animation-delay: 0.3s; }
+  .bar:nth-child(5) { animation-delay: 0.4s; }
+  .bar:nth-child(6) { animation-delay: 0.5s; }
+  .bar:nth-child(7) { animation-delay: 0.6s; }
+  .bar:nth-child(8) { animation-delay: 0.7s; }
+  
+  /* Animación de subida y bajada */
+  @keyframes rocket {
+    from {
+      height: 20px;
+    }
+    to {
+      height: 50px; /* Altura máxima de la barra al "subir" */
+    }
+  }

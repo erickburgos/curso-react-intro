@@ -1,0 +1,17 @@
+p {
+    position:relative;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    right: 10px;
+    bottom: 24px;
+    
+}
+
+span {
+    color: #3e3eda;
+    font-size: 1.5rem;
+    font-weight: bold;
+}

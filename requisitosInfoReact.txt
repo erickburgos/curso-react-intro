@@ -149,3 +149,7 @@ ejemplo
 <h1 style={
     BacgrkoundColor: 'Blue'
 }
+
+
+PORQUE COLOCAR INDEX a todos los archivos
+

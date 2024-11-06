@@ -9,8 +9,9 @@ function TodoCounter  ({  total, completed, allCompleted }) {
       //Para agregar estilo podemos agregar dobles llaves
       <h1 className="h1-list-container"style={{fontSize: 24, paddingLeft: 10}}>
         {allCompleted
-        ? (<>
-          <span style={{fontSize: 40, color: '#3e3eda'}}>completed</span> 🚀
+        ? (
+          <>
+          <span style={{fontSize: 40, color: '#3e3eda'}}>completed 🚀</span> 
           </>
         ) : (
       <> You're completed <span class="counter">{completed}</span> of <span class="counter">{total}</span>  Launchs
